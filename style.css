@@ -1,16 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-html {
-  scroll-behavior: smooth;
-}
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; 
   background-color: beige;
   margin: 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 0;
-
   cursor: url("custom-cursor.png"), auto;
 }
 
@@ -25,6 +20,9 @@ header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 header nav ul a {
@@ -33,14 +31,20 @@ header nav ul a {
   margin: 0 15px;
   font-weight: 500;
   font-size: 18px;
+  padding: 10px 20px;
 }
 
 header nav ul a:hover {
   color: #ffd700;
 }
+
 #navbar {
   display: flex;
   flex-direction: row;
+}
+
+#home img {
+  width: 90%;
 }
 
 section {
@@ -100,12 +104,12 @@ img {
   border-radius: 7px;
 }
 
-#contact pre a img {
+#contact a img {
   margin: 0 10px;
   transition: transform 0.3s;
 }
 
-#contact pre a img:hover {
+#contact a img:hover {
   transform: scale(1.1);
 }
 
@@ -126,7 +130,6 @@ h1::after {
   content: " ★";
   color: #ffd700;
 }
-
 
 a:active {
   color: red;
@@ -153,7 +156,7 @@ a:active {
 
 .about-image {
   flex: 1 1 40%;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
 .about-image img {
@@ -190,9 +193,8 @@ a:active {
 }
 
 .about-text details summary {
-  cursor: pointer;
   font-weight: bold;
-  color: #2874f0;
+  color: #b3c8ea;
   margin-bottom: 10px;
 }
 
@@ -205,7 +207,6 @@ a:active {
 
 #services {
   padding: 40px 20px;
-
   border-radius: 15px;
   margin: 20px auto;
   text-align: center;
@@ -218,7 +219,6 @@ a:active {
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 2px;
-
   display: inline-block;
   padding-bottom: 10px;
 }
@@ -260,7 +260,6 @@ a:active {
 /* Multimedia Section */
 #multimedia {
   padding: 40px 20px;
-
   border-radius: 15px;
   margin: 20px auto;
   text-align: center;
@@ -275,103 +274,13 @@ a:active {
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 2px;
-
   padding-bottom: 10px;
 }
 
 #multimedia audio,
 #multimedia iframe {
   margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-}
-
-details summary {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-details p {
-  padding: 10px;
-  background-color: #e7f3ff;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-/* Navbar - Desktop View */
-header nav ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-header nav ul a {
-  padding: 10px 20px;
-}
-@media (max-width: 768px) {
-  .about-section {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .about-image,
-  .about-text {
-    flex: 1 1 100%;
-    padding: 0;
-  }
-
-  .about-text h1 {
-    font-size: 28px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-  }
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header nav ul a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: 5px 0;
-  }
-  th,
-  td {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  th {
-    text-align: right;
-    padding-right: 30px;
-    position: relative;
-  }
-
-  th::after {
-    content: ":";
-    position: absolute;
-    right: 10px;
-  }
-
-  td {
-    text-align: left;
-    padding-left: 50px;
-    position: relative;
-  }
-
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-  }
-  #navbar {
-    display: flex;
-    flex-direction: column;
-  }
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes gradientAnimation {
@@ -384,4 +293,55 @@ header nav ul a {
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+  }
+
+  #home img {
+    width: 100%;
+  }
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+  #navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-image {
+    padding-right: 0;
+  }
+
+  .about-text {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  #services table,
+  #services td {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  #services img {
+    margin: 0 auto 15px;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
 }
