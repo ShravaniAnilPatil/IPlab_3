@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; 
   background-color: beige;
   margin: 0;
   padding: 0;
@@ -12,21 +13,7 @@ header {
   background: linear-gradient(90deg, #2874f0, #5a95ff, #2874f0);
   background-size: 600% 100%;
   animation: gradientAnimation 8s ease infinite;
-  padding: 10px 20px; /* Added padding to provide space for logo and navbar */
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Vertically center items */
-}
-
-#logo img {
-  height: auto; /* Adjust based on your logo's size */
-  max-height: 50px; /* Ensure the logo fits well in the header */
-}
-
-#navbar {
-  flex: 2; /* Adjust based on space needed for navbar */
-  display: flex;
-  justify-content: flex-end; /* Align navbar items to the right */
+  padding: 10px 0;
 }
 
 header nav ul {
@@ -34,7 +21,7 @@ header nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end; /* Align items to the right */
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -49,6 +36,11 @@ header nav ul a {
 
 header nav ul a:hover {
   color: #ffd700;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
 }
 
 #home img {
@@ -305,21 +297,13 @@ a:active {
 
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
-  header {
+  header nav ul {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #navbar {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
   }
 
   #home img {
     width: 100%;
   }
-  
   header nav ul {
     flex-direction: column;
     align-items: center;
@@ -331,7 +315,10 @@ a:active {
     text-align: center;
     margin: 5px 0;
   }
-
+  #navbar {
+    display: flex;
+    flex-direction: column;
+  }
   .about-image {
     padding-right: 0;
   }
@@ -356,4 +343,5 @@ a:active {
     flex-direction: column;
     text-align: center;
   }
+
 }
